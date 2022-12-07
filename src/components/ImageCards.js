@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import OpenImage from "./OpenImage";
 
 const ImageCard = ({ image, setSelectedImage }) => {
 

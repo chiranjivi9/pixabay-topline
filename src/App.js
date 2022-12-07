@@ -10,7 +10,7 @@ function App() {
   const [term, setTerm] = useState('arctic')
   const [selectedImage, setSelectedImage] = useState(null);
 
-
+  // Fetch to populate the gallery
   useEffect(() => {
     fetch(`https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&per_page=100`)
       .then(response => response.json())

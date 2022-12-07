@@ -6,8 +6,8 @@ const OpenImage = () => {
     let history = useHistory();
     const params = useParams();
     let docID = params.imgId;
-    console.log('PRINTING PARAMS', docID)
 
+    // Fetch image by id
     useEffect(() => {
         fetch(`https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&id=${docID}`)
             .then(response => response.json())
@@ -20,18 +20,17 @@ const OpenImage = () => {
             })
     }, [])
 
-
     return (
         <div className="container mx-auto" style={{ padding: "60px 0px 0px 430px" }}>
             {image &&
                 <div>
-                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg">
                         <img src={image.webformatURL} alt="single" className="w-full" />
                     </div>
-                    <div class="flex items-center" style={{ padding: "10px 0px 0px 0px" }}>
-                        {image.userImageURL ? <img class="w-10 h-10 rounded-full" src={image.userImageURL} alt="avatar" /> : "👤"}
-                        <div class="text-sm">
-                            <p class="text-gray-900 leading-none" style={{ padding: "0px 0px 0px 10px" }}>{image.user}</p>
+                    <div className="flex items-center" style={{ padding: "10px 0px 0px 0px" }}>
+                        {image.userImageURL ? <img className="w-10 h-10 rounded-full" src={image.userImageURL} alt="avatar" /> : "👤"}
+                        <div className="text-sm">
+                            <p className="text-gray-900 leading-none" style={{ padding: "0px 0px 0px 10px" }}>{image.user}</p>
                         </div>
                     </div>
                     <div className="pt-4 pb-2">

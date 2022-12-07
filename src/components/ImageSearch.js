@@ -7,7 +7,6 @@ const ImageSearch = ({ searchText }) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log('E ', text)
         searchText(text);
     }
 
